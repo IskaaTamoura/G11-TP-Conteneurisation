@@ -37,7 +37,7 @@ jobs:
           tags: system-metrics-agent:test
 
       - name: Run pytest
-        run: docker run --rm -v ${{ github.workspace }}/tests:/app/tests system-metrics-agent:test pytest -q
+        run: docker run --rm -e PYTHONPATH=/app -v ${{ github.workspace }}/tests:/app/tests system-metrics-agent:test pytest -q
 
       - name: Push Docker image
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
