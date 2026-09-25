@@ -36,7 +36,7 @@ jobs:
           load: true
           tags: system-metrics-agent:test
 
-    - name: Run pytest
+      - name: Run pytest
         run: docker run --rm -v ${{ github.workspace }}/tests:/app/tests system-metrics-agent:test pytest -q
 
       - name: Push Docker image
