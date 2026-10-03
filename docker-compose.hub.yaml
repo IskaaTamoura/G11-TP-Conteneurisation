@@ -1,6 +1,6 @@
 services:
   api:
-    image: TON_USERNAME/system-metrics-agent:latest
+    image: iskaa/system-metrics-agent:latest
     container_name: metrics-api
     ports:
       - "8000:8000"
@@ -18,7 +18,7 @@ services:
       start_period: 10s
 
   agent:
-    image: TON_USERNAME/system-metrics-agent:latest
+    image: iskaa/system-metrics-agent:latest
     container_name: metrics-agent
     environment:
       METRICS_ENDPOINT: http://api:8000/metrics
